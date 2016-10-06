@@ -2,6 +2,7 @@
   "name": "react-twitch",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://andrkrn.github.io/react-twitch",
   "devDependencies": {
     "react-scripts": "0.6.1"
   },
