@@ -6,11 +6,13 @@ const URL = 'https://api.twitch.tv/kraken/streams'
 const REQUEST = 'channel/REQUEST';
 const OK = 'channel/OK';
 const ERROR = 'channel/ERROR';
+const FILTER = 'channel/FILTER';
 
 export const channelActions = {
   REQUEST,
   OK,
-  ERROR
+  ERROR,
+  FILTER
 }
 
 const getChannelRequest = (id) => ({
@@ -28,6 +30,11 @@ const getChannelError = (payload, id) => ({
   type: ERROR,
   payload,
   id
+})
+
+export const setChannelVisibility = (filter) => ({
+  type: FILTER,
+  filter
 })
 
 export const getChannel = (channel_id) => (dispatch, getState) => {

@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import channel from './channel';
-import todos from './todos';
-import visibilityFilter from './visibilityFilter';
+import channel, { getChannel } from './channel';
 
 export default combineReducers({
   channel,
-  todos,
-  visibilityFilter
 })
+
+export {
+  getChannel
+}

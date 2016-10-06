@@ -66,13 +66,27 @@ const allIds = (state = [], action) => {
   }
 };
 
+const visibilityFilter = (state = 'SHOW_ALL', action) => {
+  switch (action.type) {
+    case channelActions.FILTER:
+      return action.filter
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   byId,
-  allIds
+  allIds,
+  visibilityFilter
 })
 
 export const getChannel = {
   getChannelById: (state, id) => {
-    return state.app.channel.byId[id];
-  }
+    return state.channel.byId[id];
+  },
+  getChannelData: (state, id) => getChannel.getChannelById(state, id).channel,
+  getStreamData: (state, id) => getChannel.getChannelData(state, id).stream,
+  getError: (state, id) => getChannel.getChannelById(state, id).error,
+  getLoading: (state, id) => getChannel.getChannelById(state, id).loading
 }

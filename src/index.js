@@ -10,6 +10,9 @@ import thunkMiddleware from 'redux-thunk';
 import app from './reducers';
 import App from './components/App';
 
+import '../node_modules/normalize.css/normalize.css';
+import './assets/app.css';
+
 let store = createStore(app, compose(
   applyMiddleware(thunkMiddleware),
   window.devToolsExtension ? window.devToolsExtension() : f => f
