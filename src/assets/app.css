@@ -11,7 +11,7 @@ body {
   position: relative;
   width: 350px;
   max-width: 350px;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0 auto;
   background-color: #E3F2FD;
 }
